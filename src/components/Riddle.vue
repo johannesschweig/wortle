@@ -1,11 +1,11 @@
 <template>
   <div class='wrapper'>
-  <div class='content'>
-    <div class='riddle'>
-      <Character
-        v-for='i in 30'
-        :key='i' />
-    </div>
+    <div class='content'>
+      <div class='riddle'>
+        <Character
+          v-for='i in 30'
+          :key='i' />
+      </div>
     </div>
   </div>
 </template>

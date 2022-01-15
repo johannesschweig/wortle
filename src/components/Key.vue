@@ -18,7 +18,6 @@ div {
   width: 32px;
   height: 32px;
   /* background-color: #2e2e2e; */
-  border-radius: 4px;
   text-align: center;
   line-height: 36px;
   font-size: 24px;
