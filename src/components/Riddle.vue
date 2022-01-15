@@ -3,8 +3,10 @@
     <div class='content'>
       <div class='riddle'>
         <Character
-          v-for='i in 30'
-          :key='i' />
+          v-for='(c, i) in guesses'
+          :key='i'
+          :char='c'
+          :pos='i%5' />
       </div>
     </div>
   </div>
@@ -12,12 +14,16 @@
 
 <script>
 import Character from './Character.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Riddle',
   components: {
     Character
-  }
+  },
+  computed: mapState({
+    guesses: state => state.guesses.flat()
+  })
 }
 </script>
 
