@@ -38,13 +38,13 @@ export default {
 .keyboard {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 4px;
+  border: 1px solid #2e2e2e;
 }
 
 .row {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 4px;
+  grid-template-columns: repeat(12, 32px);
+  height: 40px;
 }
 
 </style>

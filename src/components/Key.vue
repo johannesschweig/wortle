@@ -15,18 +15,19 @@ export default {
 
 <style scoped>
 div {
-  width: 50px;
-  height: 50px;
-  background-color: #2e2e2e;
+  width: 32px;
+  height: 32px;
+  /* background-color: #2e2e2e; */
   border-radius: 4px;
   text-align: center;
-  line-height: 50px;
+  line-height: 36px;
   font-size: 24px;
   text-transform: uppercase;
   cursor: pointer;
 }
 
-div:hover {
+div:hover,
+div:active {
   background-color: #525252;
 }
 
