@@ -1,5 +1,9 @@
 export default {
-  // someMethod(state) {
-  //   state.xy = 123
-  // }
+  setChar(state, payload) {
+    let guesses = state.guesses
+    guesses[payload.row][payload.col] = payload.char
+    // TODO dirty hack, but it does not work otherwise
+    state.guesses = []
+    state.guesses = guesses
+  }
 }

@@ -4,7 +4,7 @@
       <div class='riddle'>
         <Character
           v-for='(c, i) in guesses'
-          :key='i'
+          :key='i + "c"'
           :char='c'
           :pos='i%5' />
       </div>

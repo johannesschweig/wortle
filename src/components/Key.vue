@@ -1,13 +1,14 @@
 <template>
   <div
     :class='getState'
-    :style='getStyle'>
+    :style='getStyle'
+    @click='typeKey(char)'>
     {{ char }}
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import { GREEN, YELLOW, GREY } from '../constants'
 
 export default {
@@ -37,7 +38,10 @@ export default {
     ...mapGetters([
       'getKeyState'
     ])
-  }
+  },
+  methods: mapActions([
+    'typeKey'
+  ])
 }
 </script>
 
