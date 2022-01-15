@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :style='getStyle'>
     {{ char }}
   </div>
 </template>
@@ -8,19 +8,25 @@
 export default {
   name: 'Key',
   props: {
-    char: String
+    char: String,
+    size: Number
+  },
+  computed: {
+    getStyle() {
+      return {
+        'width': this.size + 'px',
+        'height': this.size + 'px',
+        'line-height': this.size + 4 + 'px',
+        'font-size': this.size - 8 + 'px'
+      }
+    }
   }
 }
 </script>
 
 <style scoped>
 div {
-  width: 32px;
-  height: 32px;
-  /* background-color: #2e2e2e; */
   text-align: center;
-  line-height: 36px;
-  font-size: 24px;
   text-transform: uppercase;
   cursor: pointer;
 }

@@ -34,7 +34,7 @@ export default {
 .riddle {
   margin: 50px 0;
   display: grid;
-  grid-template-columns: repeat(5, 62px);
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
 }
 

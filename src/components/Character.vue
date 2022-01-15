@@ -12,12 +12,13 @@ export default {
 
 <style scoped>
 div {
-  width: 62px;
-  height: 62px;
+  --char-size: 62px;
+  width: var(--char-size);
+  height: var(--char-size);
   text-align: center;
   border: 1px solid white;
-  font-size: 44px;
-  line-height: 62px;
+  font-size: calc(var(--char-size) - 20px);
+  line-height: var(--char-size);
 }
 
 </style>

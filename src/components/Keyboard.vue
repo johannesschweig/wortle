@@ -10,7 +10,8 @@
             v-for='char in row'
             :key='char'
             class='char'
-            :char='char'>
+            :char='char'
+            :size='getKeySize'>
           </Key>
         </div>
       </div>
@@ -34,6 +35,19 @@ export default {
         ['y', 'x', 'c', 'v', 'b', 'n', 'm', '⌫', '⏎']
       ]
     }
+  },
+  computed: {
+    getKeySize() {
+      // Breakpoints: 375: 32
+      let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      if (width < 500) {
+        return width/12
+      } else if (width < 1000) {
+        return width/20;
+      } else {
+        return 48
+      }
+    }
   }
 }
 </script>
@@ -56,20 +70,20 @@ export default {
 
 .row {
   display: grid;
-  grid-template-columns: repeat(11, 32px);
+  grid-template-columns: repeat(11, 1fr);
   height: 40px;
 }
 
 /* backspace */
 .row:last-child .char:nth-last-child(2) {
   grid-column: 8/10;
-  width: 100%;
+  width: 100% !important;
 }
 
 /* enter */
 .row:last-child .char:nth-last-child(1) {
   grid-column: 10/12;
-  width: 100%;
+  width: 100% !important;
 }
 
 </style>
