@@ -1,7 +1,6 @@
 <template>
   <div :class='getColor'>
     {{ char }}    
-    <!-- {{ pos }}     -->
   </div>
 </template>
 
@@ -18,10 +17,10 @@ export default {
   computed: {
     getColor() {
       //check for empty
-      if (this.char.length === 0) {
+      if (this.char.length === 0 || !this.isCharRevealed(this.pos)) {
         return ''
       }
-      let col = this.getCharState(this.char, this.pos)
+      let col = this.getCharState(this.char, this.pos%5)
       switch(col) {
         case GREEN:
           return 'green'
@@ -32,7 +31,8 @@ export default {
       }
     },
     ...mapGetters([
-      'getCharState'
+      'getCharState',
+      'isCharRevealed'
     ])
   }
 }

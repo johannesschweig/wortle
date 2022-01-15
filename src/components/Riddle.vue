@@ -6,7 +6,7 @@
           v-for='(c, i) in guesses'
           :key='i + "c"'
           :char='c'
-          :pos='i%5' />
+          :pos='i' />
       </div>
     </div>
   </div>

@@ -2,19 +2,14 @@
   <div class='wrapper'>
     <div class='content'>
       <div class='keyboard'>
-        <div
-          v-for='(row, i) in keys'
-          :key='i'
-          class='row'>
-          <Key
-            v-for='(state, char) in row'
-            :key='char'
-            class='char'
-            :char='char'
-            :state='state'
-            :size='getKeySize'>
-          </Key>
-        </div>
+        <Key
+          v-for='(state, char) in keys'
+          :key='char'
+          class='char'
+          :char='char'
+          :state='state'
+          :size='getKeySize'>
+        </Key>
       </div>
     </div>
   </div>
@@ -62,22 +57,17 @@ export default {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   border: 1px solid white;
-}
-
-.row {
-  display: grid;
   grid-template-columns: repeat(11, 1fr);
-  height: 40px;
 }
 
 /* backspace */
-.row:last-child .char:nth-last-child(2) {
+.keyboard:last-child .char:nth-last-child(2) {
   grid-column: 8/10;
   width: 100% !important;
 }
 
 /* enter */
-.row:last-child .char:nth-last-child(1) {
+.keyboard:last-child .char:nth-last-child(1) {
   grid-column: 10/12;
   width: 100% !important;
 }

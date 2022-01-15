@@ -5,5 +5,11 @@ export default {
     // TODO dirty hack, but it does not work otherwise
     state.guesses = []
     state.guesses = guesses
+  },
+  incrementActiveGuess(state) {
+    state.activeGuess += 1
+  },
+  setKeyboardState(state, payload) {
+    state.keyboard[payload.char] = payload.state
   }
 }

@@ -21,43 +21,39 @@ const state = {
   ],
   date: '2022-01-15',
   activeGuess: 0,
-  keyboard: [
-    {
-      'q': NEUTRAL,
-      'w': NEUTRAL,
-      'e': NEUTRAL,
-      'r': NEUTRAL,
-      't': NEUTRAL,
-      'z': NEUTRAL,
-      'u': NEUTRAL,
-      'i': NEUTRAL,
-      'o': NEUTRAL,
-      'p': NEUTRAL,
-      'ü': NEUTRAL
-    }, {
-      'a': NEUTRAL,
-      's': NEUTRAL,
-      'd': NEUTRAL,
-      'f': NEUTRAL,
-      'g': NEUTRAL,
-      'h': NEUTRAL,
-      'j': NEUTRAL,
-      'k': NEUTRAL,
-      'l': NEUTRAL,
-      'ö': NEUTRAL,
-      'ä': NEUTRAL
-    }, {
-      'y': NEUTRAL,
-      'x': NEUTRAL,
-      'c': NEUTRAL,
-      'v': NEUTRAL,
-      'b': NEUTRAL,
-      'n': NEUTRAL,
-      'm': NEUTRAL,
-      '⌫': NEUTRAL,
-      '⏎': NEUTRAL
-    }
-  ]
+  keyboard: {
+    'q': NEUTRAL,
+    'w': NEUTRAL,
+    'e': NEUTRAL,
+    'r': NEUTRAL,
+    't': NEUTRAL,
+    'z': NEUTRAL,
+    'u': NEUTRAL,
+    'i': NEUTRAL,
+    'o': NEUTRAL,
+    'p': NEUTRAL,
+    'ü': NEUTRAL,
+    'a': NEUTRAL,
+    's': NEUTRAL,
+    'd': NEUTRAL,
+    'f': NEUTRAL,
+    'g': NEUTRAL,
+    'h': NEUTRAL,
+    'j': NEUTRAL,
+    'k': NEUTRAL,
+    'l': NEUTRAL,
+    'ö': NEUTRAL,
+    'ä': NEUTRAL,
+    'y': NEUTRAL,
+    'x': NEUTRAL,
+    'c': NEUTRAL,
+    'v': NEUTRAL,
+    'b': NEUTRAL,
+    'n': NEUTRAL,
+    'm': NEUTRAL,
+    '⌫': NEUTRAL,
+    '⏎': NEUTRAL
+  }
 }
 
 export default new Vuex.Store({

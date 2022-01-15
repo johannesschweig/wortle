@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 import { GREEN, YELLOW, GREY } from '../constants'
 
 export default {
@@ -34,10 +34,7 @@ export default {
         case GREY: return 'grey'
         default: return 'neutral'
       }
-    },
-    ...mapGetters([
-      'getKeyState'
-    ])
+    }
   },
   methods: mapActions([
     'typeKey'

@@ -1,7 +1,7 @@
 import { GREEN, YELLOW, GREY} from '../constants'
 
 export default {
-  // returns the state of a character on the riddle
+  // returns the state of a character on the riddle or keyboard
   getCharState: (state) => (char, pos) => {
     if (state.secretWord[pos] === char) {
       return GREEN
@@ -11,9 +11,8 @@ export default {
       return GREY
     }
   },
-  // returns the state of a character on the keyboard
-/* eslint-disable */
-  getKeyState: (state) => (char) => {
-    return 0
+  // returns if the char in the riddle has already been revealed
+  isCharRevealed: (state) => (i) => {
+    return i/5 < state.activeGuess
   }
 }
