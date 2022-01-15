@@ -3,14 +3,15 @@
     <div class='content'>
       <div class='keyboard'>
         <div
-          v-for='row in keys'
-          :key='row.join()'
+          v-for='(row, i) in keys'
+          :key='i'
           class='row'>
           <Key
-            v-for='char in row'
+            v-for='(state, char) in row'
             :key='char'
             class='char'
             :char='char'
+            :state='state'
             :size='getKeySize'>
           </Key>
         </div>
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Key from './Key.vue'
 
 export default {
@@ -27,16 +29,10 @@ export default {
   components: {
     Key
   },
-  data() {
-    return {
-      keys: [
-        ['q', 'w', 'e', 'r', 't', 'z', 'u', 'i', 'o', 'p', 'ü'],
-        ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'ö', 'ä'],
-        ['y', 'x', 'c', 'v', 'b', 'n', 'm', '⌫', '⏎']
-      ]
-    }
-  },
   computed: {
+    ...mapState({
+      keys: state => state.keyboard
+    }),
     getKeySize() {
       // Breakpoints: 375: 32
       let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;

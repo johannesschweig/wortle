@@ -49,16 +49,4 @@ div {
   line-height: var(--char-size);
   text-transform: uppercase;
 }
-
-.green {
-  background-color: rgb(38, 114, 38);
-}
-
-.yellow {
-  background-color: rgb(167, 167, 64);
-}
-
-.grey {
-  background-color: rgb(61, 61, 61);
-}
 </style>

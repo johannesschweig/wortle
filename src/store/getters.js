@@ -1,6 +1,7 @@
 import { GREEN, YELLOW, GREY} from '../constants'
 
 export default {
+  // returns the state of a character on the riddle
   getCharState: (state) => (char, pos) => {
     if (state.secretWord[pos] === char) {
       return GREEN
@@ -9,5 +10,10 @@ export default {
     } else {
       return GREY
     }
+  },
+  // returns the state of a character on the keyboard
+/* eslint-disable */
+  getKeyState: (state) => (char) => {
+    return 0
   }
 }
