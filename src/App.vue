@@ -1,28 +1,58 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id='content'>
+      <div id='nav'>
+        <h1>Wörtle</h1>
+      </div>
+      <Riddle />
+      <Keyboard />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Riddle from './components/Riddle.vue'
+import Keyboard from './components/Keyboard.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Riddle,
+    Keyboard
   }
 }
 </script>
 
 <style>
+body {
+  background-color: black;
+  color: white;
+}
+</style>
+
+<style scoped>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 500px 1fr;
+}
+
+#content {
+  grid-column: 2 / 3;
+}
+
+#nav {
+  max-width: 500px;
+  width: 100%;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: white;
+}
+
+h1 {
+  text-transform: uppercase;
 }
 </style>

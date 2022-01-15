@@ -1,24 +1,4 @@
-# wortle
+# wordle
+https://www.powerlanguage.co.uk/wordle/ clone
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Guess the hidden word in 6 tries. A new puzzle is available each day.
