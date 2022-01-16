@@ -1,5 +1,7 @@
 <template>
-  <div :class='getColor'>
+  <div
+    :style='getStyle'
+    :class='getColor'>
     {{ char }}    
   </div>
 </template>
@@ -30,6 +32,11 @@ export default {
           return 'grey'
       }
     },
+    getStyle() {
+      return {
+        'text-transform': this.char === 'ß' ? 'none' : 'uppercase'
+      }
+    },
     ...mapGetters([
       'getCharState',
       'isCharRevealed'
@@ -47,7 +54,6 @@ div {
   border: 1px solid white;
   font-size: calc(var(--char-size) - 20px);
   line-height: var(--char-size);
-  text-transform: uppercase;
   user-select: none;
 }
 </style>

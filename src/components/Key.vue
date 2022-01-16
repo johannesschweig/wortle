@@ -24,7 +24,8 @@ export default {
         'width': this.size + 'px',
         'height': this.size + 'px',
         'line-height': this.size + 4 + 'px',
-        'font-size': this.size - 8 + 'px'
+        'font-size': this.size - 8 + 'px',
+        'text-transform': this.char === 'ß' ? 'none': 'uppercase'
       }
     },
     getState() {
@@ -45,7 +46,6 @@ export default {
 <style scoped>
 div {
   text-align: center;
-  text-transform: uppercase;
   cursor: pointer;
   user-select: none;
 }

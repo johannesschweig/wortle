@@ -33,6 +33,7 @@ export const KEYS = [
   'b',
   'n',
   'm',
+  'ß'
 ]
 
 export const ENTER = '⏎'

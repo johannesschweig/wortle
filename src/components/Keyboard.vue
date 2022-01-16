@@ -60,12 +60,6 @@ export default {
   grid-template-columns: repeat(11, 1fr);
 }
 
-/* backspace */
-.keyboard:last-child .char:nth-last-child(2) {
-  grid-column: 8/10;
-  width: 100% !important;
-}
-
 /* enter */
 .keyboard:last-child .char:nth-last-child(1) {
   grid-column: 10/12;
