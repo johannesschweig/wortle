@@ -5,13 +5,14 @@ import actions from './actions.js'
 import getters from './getters.js'
 import { ALL_KEYS_NEUTRAL_STATE } from '../constants' 
 import { WORDS } from '../dictionary.js'
+import { randomElementPerDay } from '../utils'
 
 Vue.use(Vuex)
 
 // TODO select random word
 const state = {
   dictionary: WORDS,
-  secretWord: 'amsel',
+  secretWord: randomElementPerDay(WORDS),
   guesses: [
     ['', '', '', '', ''],
     ['', '', '', '', ''],
