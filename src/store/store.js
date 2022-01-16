@@ -4,13 +4,15 @@ import mutations from './mutations.js'
 import actions from './actions.js'
 import getters from './getters.js'
 import { NEUTRAL } from '../constants' 
+import { WORDS } from '../dictionary.js'
 
 Vue.use(Vuex)
+console.log(WORDS)
 
 // TODO select random word and import words
 const state = {
-  dictionary: ['brühe', 'kurve', 'summe', 'dröge', 'spurt', 'kolik', 'bauer'],
-  secretWord: 'kurve',
+  dictionary: WORDS,
+  secretWord: 'amsel',
   guesses: [
     ['', '', '', '', ''],
     ['', '', '', '', ''],
