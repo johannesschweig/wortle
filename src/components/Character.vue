@@ -48,5 +48,6 @@ div {
   font-size: calc(var(--char-size) - 20px);
   line-height: var(--char-size);
   text-transform: uppercase;
+  user-select: none;
 }
 </style>

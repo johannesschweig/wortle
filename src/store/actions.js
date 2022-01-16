@@ -1,10 +1,10 @@
-import { GREEN, YELLOW, NEUTRAL } from '../constants'
+import { GREEN, YELLOW, NEUTRAL, ENTER, BACKSPACE } from '../constants'
 
 export default {
   typeKey({ commit, state, getters }, char){
     let currentGuess = state.guesses[state.activeGuess].join('')
     // Delete character
-    if (char === '⌫') {
+    if (char === BACKSPACE) {
       // Any characters in current row?
       if (currentGuess != '') {
         commit('setChar', {
@@ -13,7 +13,7 @@ export default {
           'col': currentGuess.length - 1
         })
       }
-    } else if (char === '⏎') { // Enter guess
+    } else if (char === ENTER) { // Enter guess
       if (currentGuess.length === 5) { // full row
         if (state.dictionary.indexOf(currentGuess) === -1) {
           console.log('Wort ist nicht im Wörterbuch')

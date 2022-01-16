@@ -47,6 +47,7 @@ div {
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
+  user-select: none;
 }
 
 div:hover,
