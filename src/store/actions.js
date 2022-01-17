@@ -23,7 +23,7 @@ export default {
           for (let i = 0; i < currentGuess.length; i++) {
             let char = currentGuess.charAt(i)
             let prevState = state.keyboard[char]
-            let newState = getters.getCharState(char, i)
+            let newState = getters.getKeyState(char, i)
 
             if ((prevState === NEUTRAL && newState != NEUTRAL) || 
               (prevState === YELLOW && newState === GREEN)) {

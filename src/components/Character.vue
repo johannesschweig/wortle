@@ -14,15 +14,15 @@ export default {
   name: 'Character',
   props: {
     char: String,
-    pos: Number
+    index: Number
   },
   computed: {
     getColor() {
       //check for empty
-      if (this.char.length === 0 || !this.isCharRevealed(this.pos)) {
+      if (this.char.length === 0 || !this.isCharRevealed(this.index)) {
         return ''
       }
-      let col = this.getCharState(this.char, this.pos%5)
+      let col = this.getCharState(this.char, this.index)
       switch(col) {
         case GREEN:
           return 'green'
@@ -53,6 +53,7 @@ div {
   text-align: center;
   border: 1px solid white;
   font-size: calc(var(--char-size) - 20px);
+  font-weight: 500;
   line-height: var(--char-size);
   user-select: none;
 }

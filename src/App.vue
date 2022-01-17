@@ -1,25 +1,8 @@
 <template>
   <div id="app">
-    <Navbar />
-    <Riddle />
-    <Keyboard />
+    <router-view />
   </div>
 </template>
-
-<script>
-import Riddle from './components/Riddle.vue'
-import Keyboard from './components/Keyboard.vue'
-import Navbar from './components/Navbar.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Riddle,
-    Keyboard,
-    Navbar
-  }
-}
-</script>
 
 <style>
 body {
@@ -29,11 +12,11 @@ body {
 }
 
 .green {
-  background-color: rgb(38, 114, 38);
+  background-color: #538d4e;
 }
 
 .yellow {
-  background-color: rgb(167, 167, 64);
+  background-color: #b59f3b;
 }
 
 .grey {
@@ -42,15 +25,11 @@ body {
 </style>
 
 <style scoped>
-
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0px auto;
   max-width: 500px;
 }
-
-
-
 </style>

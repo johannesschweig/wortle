@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import store from './store/store'
+import router from './router'
 import { KEYS, BACKSPACE, ENTER } from './constants'
 
 Vue.config.productionTip = false
@@ -17,6 +18,7 @@ document.addEventListener('keydown', function(event) {
 });
 
 new Vue({
+  router,
   store,
   render: h => h(App),
 }).$mount('#app')

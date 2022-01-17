@@ -2,14 +2,20 @@
   <div class='nav'>
       <div id='nav'>
         <span>Wörtle</span>
+        <span>#{{ nr }}</span>
       </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  computed: mapState({
+    nr: state => state.nr
+  })
+
 }
 </script>
 
@@ -20,9 +26,13 @@ export default {
   border-color: white;
 }
 
-span {
+span:first-child {
   font-size: 24px;
   text-transform: uppercase;
+}
+
+span:last-child {
+  float: right;
 }
 
 </style>

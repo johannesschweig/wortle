@@ -9,7 +9,6 @@ import { randomElementPerDay } from '../utils'
 
 Vue.use(Vuex)
 
-// TODO select random word
 const state = {
   dictionary: WORDS,
   secretWord: randomElementPerDay(WORDS),
@@ -21,7 +20,7 @@ const state = {
     ['', '', '', '', ''],
     ['', '', '', '', '']
   ],
-  date: '2022-01-15',
+  nr: Math.floor((new Date() - new Date('2022-01-15')) / (1000*60*60*24)) + 1,
   activeGuess: 0,
   keyboard: ALL_KEYS_NEUTRAL_STATE
 }
