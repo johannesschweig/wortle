@@ -3,40 +3,34 @@ import { GREEN, YELLOW, GREY} from '../constants'
 export default {
   // returns the state of a character on the riddle
   getCharState: (state) => (char, index) => {
+    let result = Array(5).fill('')
     // check for hits and remove them
-    let oldGuess = state.guesses[Math.floor(index/5)].join('')
-    let restSecret = ''
-    let restGuess = ''
-    for (let i = 0; i < oldGuess.length;i++) {
-      if (oldGuess[i] != state.secretWord[i]) {
-        restSecret += state.secretWord[i]
-        restGuess += oldGuess[i]
+    let guess = state.guesses[Math.floor(index/5)].join('')
+    let yellows = []
+    for (let i = 0; i < guess.length;i++) {
+      if (guess[i] == state.secretWord[i]) {
+        result[i] = GREEN
+      } else if (state.secretWord.indexOf(guess[i]) === -1) {
+        result[i] = GREY
+      } else { // potential yellow
+        result[i] = YELLOW
+        yellows.push(guess[i])
       }
     }
-    if (state.secretWord[index%5] === char) {
-      return GREEN
-    } else if (restSecret.indexOf(char) != -1) {
-      // check if enough other characters are already yellow
-      /// find all occurences in guess and secret
-      let occGuess = restGuess.split('').reduce(function(a, e, i) {
-          if (e === char)
-              a.push(i);
-          return a;
-      }, []);
-      let occSecret = (restSecret.match(new RegExp(char, "g")) || []).length
-      /// remove occurences from start to end
-      for (let i = 0;i<occSecret;i++) {
-        occGuess.shift()
-      }
-      if (occGuess.length && occGuess.indexOf(index) == -1) {
-        return YELLOW
-      } else {
-        return GREY
-      }
-
-    } else {
-      return GREY
-    }
+    // yellows = [...new Set(yellows)]
+    // console.log('inter', result)
+    // // check for too many yellows (and remove the ones that are too much)
+    // for (let i=0;i<yellows.length;i++) {
+    //   let numSecret = (state.secretWord.match(new RegExp(yellows[i], "g")) || []).length
+    //   let numGuess = (guess.match(new RegExp(yellows[i], "g")) || []).length
+    //   if (numGuess > numSecret) {
+    //     for (let j=0;j < (numGuess - numSecret);j++) {
+    //       result[guess.lastIndexOf(yellows[i])] = GREY
+    //     }
+    //   }
+    // }
+    return result[index%5]
+    
   },
   // returns the state of a character on the keyboard
   getKeyState: (state) => (char, pos) => {

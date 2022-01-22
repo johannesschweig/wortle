@@ -19,6 +19,9 @@ let states = [{
   },{
     state: getState('xxxoo', 'pooop'),
     result: [GREY, YELLOW, GREY, GREEN, GREY]
+  },{
+    state: getState('oxoox', 'pxpxp'),
+    result: [GREY, GREEN, GREY, YELLOW, GREY]
   }
 ]
 
