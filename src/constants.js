@@ -2,6 +2,9 @@ export const GREEN = 'green'
 export const YELLOW = 'yellow'
 export const NEUTRAL = 'neutral'
 export const GREY = 'grey'
+export const START = 'start'
+export const WON = 'won'
+export const LOST = 'lost'
 
 export const KEYS = [
   'q',

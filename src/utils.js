@@ -7,3 +7,8 @@ export function randomElementPerDay(ar) {
   let el = ar[Math.floor(rand * ar.length)]
   return el
 }
+
+// returns current day as a string yyyy-mm-dd
+export function getToday() {
+  return new Date().toISOString().split('T')[0]
+}

@@ -1,4 +1,6 @@
-# wordle
-https://www.powerlanguage.co.uk/wordle/ clone
+# Wörtle
+A [wordle](https://www.powerlanguage.co.uk/wordle/) clone in German
 
-Guess the hidden word in 6 tries. A new puzzle is available each day.
+Find it on http://wortle.herokuapp.com/
+
+

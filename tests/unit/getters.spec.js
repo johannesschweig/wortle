@@ -2,45 +2,47 @@ import { expect } from 'chai'
 import getters from '../../src/store/getters'
 import { GREEN, GREY, YELLOW } from '../../src/constants'
 
-const state = {
-  secretWord: 'pppoo',
-  guesses: [ 'ppppo'.split('') ],
-  activeGuess: 1,
+function getState(secretWord, guess) {
+  return {
+    secretWord,
+    guesses: [ guess.split('') ],
+    activeGuess: 1
+  }
 }
 
-const state2 = {
-  secretWord: 'pppoo',
-  guesses: [ 'xoxoo'.split('') ],
-  activeGuess: 1,
-}
+let states = [{
+    state: getState('pppoo', 'ppppo'),
+    result: [GREEN, GREEN, GREEN, GREY, GREEN]
+  },{
+    state: getState('pppoo', 'xoxoo'),
+    result: [GREY, GREY, GREY, GREEN, GREEN]
+  },{
+    state: getState('xxxoo', 'pooop'),
+    result: [GREY, YELLOW, GREY, GREEN, GREY]
+  }
+]
 
 describe('getters', () => {
-  it('returns green char state', () => {
-    const actual = getters.getCharState(state)('p', 0)
-    expect(actual).equal(GREEN)
+  it('returns correct char states', () => {
+    let actual = []
+    // loop over states
+    for (let i=0;i<states.length;i++) {
+      // loop over characters in guess
+      for (let j=0;j<states[i].state.secretWord.length;j++) {
+        actual.push(getters.getCharState(states[i].state)(states[i].state.guesses[0][j], j))
+      }
+      console.log('actual', actual, 'exp', states[i].result)
+      expect(actual).to.eql(states[i].result)
+      actual = []
+    }
   })
-
-  it('returns grey char state', () => {
-    let actual = getters.getCharState(state)('x', 0)
-    expect(actual).equal(GREY)
-    actual = getters.getCharState(state2)('0', 1)
-    expect(actual).equal(GREY)
-  })
-
-  it('returns yellow char state', () => {
-    let actual = getters.getCharState(state)('o', 0)
-    expect(actual).equal(YELLOW)
-    actual = getters.getCharState(state)('o', 2)
-    expect(actual).equal(YELLOW)
-  })
-
   
   it('returns correct key states', () => {
-    let actual = getters.getKeyState(state)('p', 0)
+    let actual = getters.getKeyState(states[0].state)('p', 0)
     expect(actual).equal(GREEN)
-    actual = getters.getKeyState(state)('x', 0)
+    actual = getters.getKeyState(states[0].state)('x', 0)
     expect(actual).equal(GREY)
-    actual = getters.getKeyState(state)('o', 0)
+    actual = getters.getKeyState(states[0].state)('o', 0)
     expect(actual).equal(YELLOW)
   })
 
